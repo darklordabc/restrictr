@@ -1,0 +1,16 @@
+{
+	"source" : "builtin",
+	"applications": [{
+		"app_key": "martinzudaire.restrictr",
+		"launch_type": "binary",
+		"binary_path_windows": "restrictr.exe",
+		"is_dashboard_overlay": true,
+
+		"strings": {
+			"en_us": {
+				"name": "Restrictr",
+				"description": "Restrictr Overlay"
+			}
+		}
+	}]
+}

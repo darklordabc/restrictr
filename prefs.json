@@ -1,0 +1,73 @@
+{
+    "lastEditTime": 1581831089,
+    "global": {
+        "StartWithSteamVR": true,
+        "settings": {
+            "enabled": true,
+            "enabledInDashboard": false,
+            "playAlertSound": true,
+            "doNotActivateIfFacingDown": false,
+            "boundsBoxVisibility": 0,
+            "colorRed": 0.0,
+            "colorGreen": 0.0,
+            "colorBlue": 0.0,
+            "boundsSize": 1.0,
+            "timeFadeIn": 0.20000000298023225,
+            "timeFadeOut": 0.5,
+            "timeTextFlash": 0.5,
+            "textReturn": "RETURN TO CENTER",
+            "textStepLeft": "STEP LEFT",
+            "textStepRight": "STEP RIGHT",
+            "textStepBack": "STEP BACKWARDS",
+            "textStepForward": "STEP FORWARDS"
+        }
+    },
+    "games": [
+        {
+            "appId": -1,
+            "useGlobal": true,
+            "settings": {
+                "enabled": true,
+                "enabledInDashboard": false,
+                "playAlertSound": true,
+                "doNotActivateIfFacingDown": false,
+                "boundsBoxVisibility": 0,
+                "colorRed": 0.0,
+                "colorGreen": 0.0,
+                "colorBlue": 0.0,
+                "boundsSize": 1.0,
+                "timeFadeIn": 0.20000000298023225,
+                "timeFadeOut": 0.5,
+                "timeTextFlash": 0.5,
+                "textReturn": "RETURN TO CENTER",
+                "textStepLeft": "STEP LEFT",
+                "textStepRight": "STEP RIGHT",
+                "textStepBack": "STEP BACKWARDS",
+                "textStepForward": "STEP FORWARDS"
+            }
+        },
+        {
+            "appId": 250820,
+            "useGlobal": true,
+            "settings": {
+                "enabled": true,
+                "enabledInDashboard": false,
+                "playAlertSound": true,
+                "doNotActivateIfFacingDown": false,
+                "boundsBoxVisibility": 0,
+                "colorRed": 0.0,
+                "colorGreen": 0.0,
+                "colorBlue": 0.0,
+                "boundsSize": 1.0,
+                "timeFadeIn": 0.20000000298023225,
+                "timeFadeOut": 0.5,
+                "timeTextFlash": 0.5,
+                "textReturn": "RETURN TO CENTER",
+                "textStepLeft": "STEP LEFT",
+                "textStepRight": "STEP RIGHT",
+                "textStepBack": "STEP BACKWARDS",
+                "textStepForward": "STEP FORWARDS"
+            }
+        }
+    ]
+}
