@@ -1,7 +1,7 @@
 {
-    "lastEditTime": 1581831089,
+    "lastEditTime": 1582668336,
     "global": {
-        "StartWithSteamVR": true,
+        "StartWithSteamVR": false,
         "settings": {
             "enabled": true,
             "enabledInDashboard": false,
@@ -11,7 +11,7 @@
             "colorRed": 0.0,
             "colorGreen": 0.0,
             "colorBlue": 0.0,
-            "boundsSize": 1.0,
+            "boundsSize": 2.001427412033081,
             "timeFadeIn": 0.20000000298023225,
             "timeFadeOut": 0.5,
             "timeTextFlash": 0.5,
@@ -24,12 +24,58 @@
     },
     "games": [
         {
+            "appId": 480,
+            "useGlobal": true,
+            "settings": {
+                "enabled": true,
+                "enabledInDashboard": false,
+                "playAlertSound": true,
+                "doNotActivateIfFacingDown": false,
+                "boundsBoxVisibility": 0,
+                "colorRed": 0.0,
+                "colorGreen": 0.0,
+                "colorBlue": 0.0,
+                "boundsSize": 1.0,
+                "timeFadeIn": 0.20000000298023225,
+                "timeFadeOut": 0.5,
+                "timeTextFlash": 0.5,
+                "textReturn": "RETURN TO CENTER",
+                "textStepLeft": "STEP LEFT",
+                "textStepRight": "STEP RIGHT",
+                "textStepBack": "STEP BACKWARDS",
+                "textStepForward": "STEP FORWARDS"
+            }
+        },
+        {
             "appId": -1,
             "useGlobal": true,
             "settings": {
                 "enabled": true,
                 "enabledInDashboard": false,
                 "playAlertSound": true,
+                "doNotActivateIfFacingDown": false,
+                "boundsBoxVisibility": 0,
+                "colorRed": 0.0,
+                "colorGreen": 0.0,
+                "colorBlue": 0.0,
+                "boundsSize": 1.0,
+                "timeFadeIn": 0.20000000298023225,
+                "timeFadeOut": 0.5,
+                "timeTextFlash": 0.5,
+                "textReturn": "RETURN TO CENTER",
+                "textStepLeft": "STEP LEFT",
+                "textStepRight": "STEP RIGHT",
+                "textStepBack": "STEP BACKWARDS",
+                "textStepForward": "STEP FORWARDS"
+            }
+        },
+        {
+            "appId": 620980,
+            "useGlobal": false,
+            "settings": {
+                "enabled": false,
+                "enabledInDashboard": true,
+                "playAlertSound": false,
                 "doNotActivateIfFacingDown": false,
                 "boundsBoxVisibility": 0,
                 "colorRed": 0.0,

@@ -729,7 +729,7 @@ MonoBehaviour:
   windowWidth: 800
   windowHeight: 600
   runningFPS: 90
-  idleFPS: 3
+  idleFPS: 60
   hmdO: {fileID: 507991068}
   floorOverlayHeight: 0
   floorOverlayFollowSpeed: 2
@@ -4937,17 +4937,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 49679439}
         m_MethodName: OnSteamVRConnect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1141944}
-        m_MethodName: SteamStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

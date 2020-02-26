@@ -79,8 +79,17 @@ public class PlayBoundsManager : MonoBehaviour {
             bVisionIsBlocked = false;
         }
 
-        if (!prefs.IsEnabled() || (OpenVR.Overlay.IsDashboardVisible() && !prefs.IsEnabledInDashboard()))
+        try
+        {
+            if (!prefs.IsEnabled()
+                || (OpenVR.Overlay.IsDashboardVisible()
+                && !prefs.IsEnabledInDashboard()))
+                animTimer = 0f;
+        } catch (System.Exception e)
+        {
+            //OpenVR is not running
             animTimer = 0f;
+        }
 
 
 
@@ -151,7 +160,9 @@ public class PlayBoundsManager : MonoBehaviour {
         bool bFoundRunning = false;
         while (index < appIds.Length && !bFoundRunning) {
             try {
-                if (!appIds[index].Equals("689580")) { //Excluding TurnSignal
+                if (!appIds[index].Equals("689580") //Excluding TurnSignal
+                    || !appIds[index].Equals("1170130") //Excluding Restrictr
+                    ) { 
                     bFoundRunning = IsAppIdRunning(appIds[index]);
                 }
             } catch (System.Exception e) {
@@ -176,10 +187,20 @@ public class PlayBoundsManager : MonoBehaviour {
 
     public string GetGameName(int appId) {
         if (appId == -1) return null;
+
         string appName;
 
-        SteamAppList.GetAppName(new AppId_t((uint)appId), out appName, 256);
+        try
+        {
+            if (SteamAppList.GetAppName(new AppId_t((uint)appId), out appName, 256) == -1 && (appName == null || appName == ""))
+            {
+                appName = "Unknown (App Id: " + appId.ToString() + ")";
+            };
 
+        } catch (System.Exception e)
+        {
+            appName = "Unknown (App Id: "+appId.ToString()+")";
+        }
         return appName;
     }
 

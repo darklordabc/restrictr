@@ -19,9 +19,19 @@ public class UIPlayArea : MonoBehaviour {
         float sizeZ = 0f;
 
         text.text = "Play area = ";
-        if (OpenVR.ChaperoneSetup.GetWorkingPlayAreaSize(ref sizeX, ref sizeZ)) {
-            text.text +=sizeX.ToString("F2")+"m x "+sizeZ.ToString("F2")+"m";
-        } else {
+
+        try
+        {
+            if (OpenVR.ChaperoneSetup.GetWorkingPlayAreaSize(ref sizeX, ref sizeZ))
+            {
+                text.text += sizeX.ToString("F2") + "m x " + sizeZ.ToString("F2") + "m";
+            }
+            else
+            {
+                text.text += "unknown";
+            }
+        } catch
+        {
             text.text += "unknown";
         }
 	}

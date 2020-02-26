@@ -52,6 +52,7 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
     public void Awake() {
         instance = this;
         activeTab = ActiveTab.Global;
+
         //SelectGlobalTab();
     }
 

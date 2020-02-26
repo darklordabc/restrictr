@@ -66,10 +66,22 @@ public class UIWindowInputField : MonoBehaviour {
     }
 
     public void ShowKeyboard() {
-        OpenVR.Overlay.ShowKeyboardForOverlay(0, 0, 0, label.text, 256, inputField.text, false, 0);
+        try
+        {
+            OpenVR.Overlay.ShowKeyboardForOverlay(0, 0, 0, label.text, 256, inputField.text, false, 0);
+        } catch (System.Exception e)
+        {
+            //OpenVR not running, ignore!
+        }
     }
 
     public void HideKeyboard() {
-        OpenVR.Overlay.HideKeyboard();
+        try
+        {
+            OpenVR.Overlay.HideKeyboard();
+        } catch (System.Exception e)
+        {
+            //OpenVR not running, ignore!
+        }
     }
 }

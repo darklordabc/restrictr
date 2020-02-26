@@ -77,6 +77,8 @@ public partial class PlayBounds_Director : MonoBehaviour
 		string prefsFileName = "prefs.json";
 
 		prefs.SetFilePath(prefsPath, prefsFileName);
+        prefs.Load();
+        menuRig.SetUIValues();
 	}
 
 	public void OnApplicationQuit()	 

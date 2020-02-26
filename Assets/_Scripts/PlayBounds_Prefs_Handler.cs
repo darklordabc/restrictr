@@ -39,7 +39,13 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
             if (prefs.global.StartWithSteamVR != value) {
                 prefs.global.StartWithSteamVR = value;
                 //PlayBounds_Director.instance.SetManifestAutoLaunch(value);
-                PlayBounds_Director.instance.SetApplicationLaunchOnStart(value);
+                try
+                {
+                    PlayBounds_Director.instance.SetApplicationLaunchOnStart(value);
+                } catch (System.Exception e)
+                {
+                    Debug.LogError(e + e.StackTrace);
+                }
             }
             Save();
         }
@@ -651,25 +657,37 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
 
     public bool Save(bool skipSteam = false, PlayBoundsPrefs overrideP = null)
     {
-        PlayBoundsPrefs p;
+        try
+        {
+            PlayBoundsPrefs p;
 
-        if(overrideP != null)
-            p = overrideP;
-        else
-            p = prefs;
+            if(overrideP != null)
+                p = overrideP;
+            else
+                p = prefs;
 
-        p.lastEditTime = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            p.lastEditTime = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
-        string text = JsonUtility.ToJson(prefs, true);
-        string fullP = _filePath + _fileName;
+            string text = JsonUtility.ToJson(prefs, true);
+            string fullP = _filePath + _fileName;
 
-        Debug.Log("Writing Local Prefs!");
-        File.WriteAllText(fullP, text);
+            Debug.Log("Writing Local Prefs!");
+            File.WriteAllText(fullP, text);
 
-        if(!skipSteam)
-            SteamSave();
+            try
+            {
+                if (!skipSteam)
+                    SteamSave();
+            } catch (System.Exception e)
+            {
+                Debug.LogError("Error when saving to Steam.");
+            }
 
-        return File.Exists(fullP);
+            return File.Exists(fullP);
+
+        } catch (System.Exception e) {
+            return false;
+        }
     }
 
     public bool SteamSave() 
@@ -690,6 +708,8 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
 
     public bool Load()
     {
+        Debug.Log("Loading prefs...");
+
         PlayBoundsPrefs fileP = FileLoad();
         PlayBoundsPrefs steamP = null;// SteamLoad();
 
@@ -723,7 +743,7 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
         }
         
         prefs = p;
-        Save(skipSteam);
+        //Save(skipSteam);
         
         return res;
     }
