@@ -1,7 +1,7 @@
 {
-    "lastEditTime": 1582668336,
+    "lastEditTime": 1583310226,
     "global": {
-        "StartWithSteamVR": false,
+        "StartWithSteamVR": true,
         "settings": {
             "enabled": true,
             "enabledInDashboard": false,
@@ -11,7 +11,7 @@
             "colorRed": 0.0,
             "colorGreen": 0.0,
             "colorBlue": 0.0,
-            "boundsSize": 2.001427412033081,
+            "boundsSize": 1.5586302280426026,
             "timeFadeIn": 0.20000000298023225,
             "timeFadeOut": 0.5,
             "timeTextFlash": 0.5,

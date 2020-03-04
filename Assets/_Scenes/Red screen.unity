@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0137c220a4bdf984ebf4bf02b6d1c7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appKey: 1170130
+  appKey: steam.overlay.1170130
   floorOverlay: {fileID: 1560779875}
   menuOverlay: {fileID: 842344132}
   menuRig: {fileID: 1141944}

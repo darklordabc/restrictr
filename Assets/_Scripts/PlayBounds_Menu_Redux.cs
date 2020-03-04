@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class PlayBounds_Menu_Redux : MonoBehaviour 
+public class PlayBounds_Menu_Redux : MonoBehaviour
 {
-    public enum ActiveTab { Global, Game };
+    public enum ActiveTab
+    {
+        Global,
+        Game
+    };
 
-	public Camera menuRigCamera;
+    public Camera menuRigCamera;
 
-	[Space(10)]
-	
-	public PlayBounds_Prefs_Handler prefs;
+    [Space(10)] public PlayBounds_Prefs_Handler prefs;
 
-	[Space(10)]
-
-    public Toggle isEnabledToggle;
+    [Space(10)] public Toggle isEnabledToggle;
     public Toggle enabledInDashboardToggle;
     public Toggle startWithVRToggle;
     public Toggle useGlobalSettingsToggle;
@@ -49,7 +49,8 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
 
     public static PlayBounds_Menu_Redux instance;
 
-    public void Awake() {
+    public void Awake()
+    {
         instance = this;
         activeTab = ActiveTab.Global;
 
@@ -57,26 +58,26 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
     }
 
     public void SteamStart()
-	{
+    {
+        if (!prefs.Load())
+            Debug.Log("Bad Settings Load!");
 
-		if(!prefs.Load())			
-			Debug.Log("Bad Settings Load!");
+        SetUIValues();
+    }
 
-		SetUIValues();
-	}
-
-	public void SetUIValues()
+    public void SetUIValues()
     {
         boundsSizeSlider.maxValue = UIPlayAreaRectangle.GetPlayAreaSize();
 
-        if (activeTab == ActiveTab.Global) {
+        if (activeTab == ActiveTab.Global)
+        {
             startWithVRToggle.isOn = prefs.StartWithSteamVR;
 
             isEnabledToggle.isOn = prefs.globalIsEnabled;
             enabledInDashboardToggle.isOn = prefs.globalEnabledInDashboard;
             playAlertSoundToggle.isOn = prefs.globalPlayAlertSound;
             doNotActivateIfFacingDownToggle.isOn = prefs.globalDoNotActivateIfFacingDown;
-            boundsBoxVisibilityDropdown.selectedIndex = (int)(prefs.globalBoundsBoxVisibility);
+            boundsBoxVisibilityDropdown.selectedIndex = (int) (prefs.globalBoundsBoxVisibility);
             boundsSizeSlider.value = prefs.globalBoundsSize;
             fadeInTimeSlider.value = prefs.globalTimeFadeIn;
             fadeOutTimeSlider.value = prefs.globalTimeFadeOut;
@@ -89,15 +90,16 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
             textStepRight.text = prefs.globalTextStepRight;
             textStepBack.text = prefs.globalTextStepBack;
             textStepForward.text = prefs.globalTextStepForward;
-
-        } else {
+        }
+        else
+        {
             useGlobalSettingsToggle.isOn = prefs.gameUseGlobal;
 
             isEnabledToggle.isOn = prefs.gameIsEnabled;
             enabledInDashboardToggle.isOn = prefs.gameIsEnabledInDashboard;
             playAlertSoundToggle.isOn = prefs.gamePlayAlertSound;
             doNotActivateIfFacingDownToggle.isOn = prefs.gameDoNotActivateIfFacingDown;
-            boundsBoxVisibilityDropdown.selectedIndex = (int)(prefs.gameBoundsBoxVisibility);
+            boundsBoxVisibilityDropdown.selectedIndex = (int) (prefs.gameBoundsBoxVisibility);
             boundsSizeSlider.value = prefs.gameBoundsSize;
             fadeInTimeSlider.value = prefs.gameTimeFadeIn;
             fadeOutTimeSlider.value = prefs.gameTimeFadeOut;
@@ -111,11 +113,10 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
             textStepBack.text = prefs.gameTextStepBack;
             textStepForward.text = prefs.gameTextStepForward;
         }
-
     }
 
-    public void Update() {
-
+    public void Update()
+    {
         /*if (!PlayBoundsManager.instance.IsRunningAnApp()) {
             activeTab = ActiveTab.Global;
             tabGame.text.text = "[No game running]";
@@ -124,7 +125,8 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
         }*/
 
 
-        switch (activeTab) {
+        switch (activeTab)
+        {
             case ActiveTab.Global:
                 startWithVRToggle.gameObject.SetActive(true);
                 useGlobalSettingsToggle.gameObject.SetActive(false);
@@ -140,16 +142,21 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
     }
 
     public void ResetSettings()
-	{
-        if (activeTab== ActiveTab.Global) {
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.ResetGlobal();
-        } else {
+        }
+        else
+        {
             prefs.ResetGame();
         }
-		SetUIValues();
+
+        SetUIValues();
     }
 
-    public void SelectGlobalTab() {
+    public void SelectGlobalTab()
+    {
         activeTab = ActiveTab.Global;
 
         tabGlobal.text.color = colorTabNormalText;
@@ -161,7 +168,8 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
         SetUIValues();
     }
 
-    public void SelectGameTab() {
+    public void SelectGameTab()
+    {
         //if (!PlayBoundsManager.instance.IsRunningAnApp()) return;
 
         activeTab = ActiveTab.Game;
@@ -171,101 +179,170 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
 
         tabGame.text.color = colorTabNormalText;
         tabGame.image.color = colorTabNormalBack;
-        
+
         SetUIValues();
     }
 
-    public void SetStartWithVR() {
-        if (activeTab == ActiveTab.Global) {
+    public void SetStartWithVR()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.StartWithSteamVR = startWithVRToggle.isOn;
         }
     }
-    public void SetUseGlobal() {
-        if (activeTab == ActiveTab.Game) {
+
+    public void SetUseGlobal()
+    {
+        if (activeTab == ActiveTab.Game)
+        {
             prefs.gameUseGlobal = useGlobalSettingsToggle.isOn;
         }
     }
-    public void SetEnabled() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetEnabled()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalIsEnabled = isEnabledToggle.isOn;
-        } else {
+        }
+        else
+        {
             prefs.gameIsEnabled = isEnabledToggle.isOn;
         }
     }
-    public void SetEnabledInDashboard() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetEnabledInDashboard()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalEnabledInDashboard = enabledInDashboardToggle.isOn;
-        } else {
+        }
+        else
+        {
             prefs.gameIsEnabledInDashboard = enabledInDashboardToggle.isOn;
         }
     }
-    public void SetMustPlayAlertSound() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetMustPlayAlertSound()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalPlayAlertSound = playAlertSoundToggle.isOn;
-        } else {
+        }
+        else
+        {
             prefs.gamePlayAlertSound = playAlertSoundToggle.isOn;
         }
     }
-    public void SetDoNotActivateIfFacingDown() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetDoNotActivateIfFacingDown()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalDoNotActivateIfFacingDown = doNotActivateIfFacingDownToggle.isOn;
-        } else {
+        }
+        else
+        {
             prefs.gameDoNotActivateIfFacingDown = doNotActivateIfFacingDownToggle.isOn;
         }
     }
-    public void SetBoundsBoxVisibility() {
-        if (activeTab == ActiveTab.Global) {
-            prefs.globalBoundsBoxVisibility = (PlayBoundsPrefs.PlayBoundPrefsSettings.BoundsBoxVisibility)(boundsBoxVisibilityDropdown.selectedIndex);
-        } else {
-            prefs.gameBoundsBoxVisibility = (PlayBoundsPrefs.PlayBoundPrefsSettings.BoundsBoxVisibility)(boundsBoxVisibilityDropdown.selectedIndex);
+
+    public void SetBoundsBoxVisibility()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
+            prefs.globalBoundsBoxVisibility =
+                (PlayBoundsPrefs.PlayBoundPrefsSettings.BoundsBoxVisibility) (boundsBoxVisibilityDropdown
+                    .selectedIndex);
+        }
+        else
+        {
+            prefs.gameBoundsBoxVisibility =
+                (PlayBoundsPrefs.PlayBoundPrefsSettings.BoundsBoxVisibility) (boundsBoxVisibilityDropdown
+                    .selectedIndex);
         }
     }
-    public void SetBoundsSize() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetBoundsSize()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalBoundsSize = boundsSizeSlider.value;
-        } else {
+        }
+        else
+        {
             prefs.gameBoundsSize = boundsSizeSlider.value;
         }
     }
-    public void SetFadeInTime() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetFadeInTime()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalTimeFadeIn = fadeInTimeSlider.value;
-        } else {
+        }
+        else
+        {
             prefs.gameTimeFadeIn = fadeInTimeSlider.value;
         }
     }
-    public void SetFadeOutTime() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetFadeOutTime()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalTimeFadeOut = fadeOutTimeSlider.value;
-        } else {
+        }
+        else
+        {
             prefs.gameTimeFadeOut = fadeOutTimeSlider.value;
         }
     }
-    public void SetTextFlashTime() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetTextFlashTime()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalTimeTextFlash = textFlashTimeSlider.value;
-        } else {
+        }
+        else
+        {
             prefs.gameTimeTextFlash = textFlashTimeSlider.value;
         }
     }
-    public void SetColorRed() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetColorRed()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalColorRed = colorRedSlider.value;
-        } else {
+        }
+        else
+        {
             prefs.gameColorRed = colorRedSlider.value;
         }
     }
-    public void SetColorGreen() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetColorGreen()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalColorGreen = colorGreenSlider.value;
-        } else {
+        }
+        else
+        {
             prefs.gameColorGreen = colorGreenSlider.value;
         }
     }
-    public void SetColorBlue() {
-        if (activeTab == ActiveTab.Global) {
+
+    public void SetColorBlue()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
             prefs.globalColorBlue = colorBlueSlider.value;
-        } else {
+        }
+        else
+        {
             prefs.gameColorBlue = colorBlueSlider.value;
         }
     }

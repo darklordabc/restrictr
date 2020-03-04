@@ -116,6 +116,12 @@ public partial class PlayBounds_Director
 	{
 		return (handler != null && handler.Applications != null) ? handler.Applications.GetApplicationAutoLaunch(appKey) : false; 
 	}*/
+	
+	public void SetManifestAutoLaunch(bool autoLaunch)
+	{
+		if(handler != null && handler.Applications != null)
+			handler.Applications.SetApplicationAutoLaunch(appKey, autoLaunch);
+	}
 
     public void SetApplicationLaunchOnStart(bool bLaunchOnStart) {
         if (handler != null && handler.Applications != null)
