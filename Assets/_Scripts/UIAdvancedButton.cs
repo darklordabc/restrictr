@@ -7,6 +7,8 @@ public class UIAdvancedButton : MonoBehaviour {
 
     public GameObject advancedOptions;
     public Text text;
+    public BufferLocalizer bufferLocalizerShowAdvanced;
+    public BufferLocalizer bufferLocalizerHideAdvanced;
 
     private bool bShowAdvanced = false;
 
@@ -18,8 +20,8 @@ public class UIAdvancedButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!bShowAdvanced) text.text = "Show advanced";
-        else text.text = "Hide advanced";
+        if (!bShowAdvanced) text.text = bufferLocalizerShowAdvanced.localizedValue;
+        else text.text = bufferLocalizerHideAdvanced.localizedValue;
 	}
 
     public void OnClick() {

@@ -79,6 +79,7 @@ public partial class PlayBounds_Director : MonoBehaviour
 		prefs.SetFilePath(prefsPath, prefsFileName);
         prefs.Load();
         menuRig.SetUIValues();
+        LanguageManager.instance.SelectLanguage(prefs.language);
 	}
 
 	public void OnApplicationQuit()	 

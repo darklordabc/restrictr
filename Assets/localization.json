@@ -1,0 +1,499 @@
+{
+    "data": [
+        {
+            "key_values": [
+                {
+                    "key": "btn_dropdown_window_ok",
+                    "value": "OK"
+                },
+                {
+                    "key": "btn_game_specific_settings",
+                    "value": "Game specific settings"
+                },
+                {
+                    "key": "btn_global_settings",
+                    "value": "Global settings"
+                },
+                {
+                    "key": "btn_hide_advanced",
+                    "value": "Hide advanced"
+                },
+                {
+                    "key": "btn_quit",
+                    "value": "Quit"
+                },
+                {
+                    "key": "btn_reset_to_default",
+                    "value": "Reset to default"
+                },
+                {
+                    "key": "btn_show_advanced",
+                    "value": "Show advanced"
+                },
+                {
+                    "key": "btn_text_back",
+                    "value": "Back:"
+                },
+                {
+                    "key": "btn_text_forward",
+                    "value": "Forward:"
+                },
+                {
+                    "key": "btn_text_left",
+                    "value": "Left:"
+                },
+                {
+                    "key": "btn_text_return",
+                    "value": "Return:"
+                },
+                {
+                    "key": "btn_text_right",
+                    "value": "Right:"
+                },
+                {
+                    "key": "chk_do_not_activate_if_looking_down",
+                    "value": "Do not activate if looking down"
+                },
+                {
+                    "key": "chk_enabled",
+                    "value": "Enabled"
+                },
+                {
+                    "key": "chk_enabled_in_dashboard",
+                    "value": "Enabled in dashboard"
+                },
+                {
+                    "key": "chk_play_alert_sound",
+                    "value": "Play alert sound"
+                },
+                {
+                    "key": "chk_start_with_steamvr",
+                    "value": "Start with SteamVR"
+                },
+                {
+                    "key": "chk_use_global_settings",
+                    "value": "Use global settings"
+                },
+                {
+                    "key": "drp_always_visible",
+                    "value": "Always visible"
+                },
+                {
+                    "key": "drp_when_to_show_bounds_box",
+                    "value": "When to show bounds box"
+                },
+                {
+                    "key": "drp_when_vision_is_blocked",
+                    "value": "When vision is blocked"
+                },
+                {
+                    "key": "drp_when_vision_is_blocked_plus_5_seconds",
+                    "value": "When vision is blocked + 5 seconds after"
+                },
+                {
+                    "key": "lbl_color",
+                    "value": "Color:"
+                },
+                {
+                    "key": "lbl_color_blue",
+                    "value": "Blue:"
+                },
+                {
+                    "key": "lbl_color_green",
+                    "value": "Green:"
+                },
+                {
+                    "key": "lbl_color_hue",
+                    "value": "Hue"
+                },
+                {
+                    "key": "lbl_color_red",
+                    "value": "Red:"
+                },
+                {
+                    "key": "lbl_color_value",
+                    "value": "Value"
+                },
+                {
+                    "key": "lbl_current_game",
+                    "value": "Current game"
+                },
+                {
+                    "key": "lbl_current_game_none",
+                    "value": "none"
+                },
+                {
+                    "key": "lbl_play_area",
+                    "value": "Play area"
+                },
+                {
+                    "key": "lbl_play_area_unknown",
+                    "value": "unknown"
+                },
+                {
+                    "key": "lbl_saturation",
+                    "value": "Saturation"
+                },
+                {
+                    "key": "lbl_session_time",
+                    "value": "Session time"
+                },
+                {
+                    "key": "lbl_session_time_hours",
+                    "value": "hours"
+                },
+                {
+                    "key": "lbl_session_time_minutes",
+                    "value": "minutes"
+                },
+                {
+                    "key": "lbl_text_settings",
+                    "value": "Text settings"
+                },
+                {
+                    "key": "lbl_vision_block_activated",
+                    "value": "Vision block activated"
+                },
+                {
+                    "key": "lbl_vision_block_activated_times",
+                    "value": "times"
+                },
+                {
+                    "key": "lbl_vision_blocker_settings",
+                    "value": "Vision blocker settings"
+                },
+                {
+                    "key": "lbl_window_input_field_value",
+                    "value": "Value:"
+                },
+                {
+                    "key": "sld_bounds_size",
+                    "value": "Bounds size"
+                },
+                {
+                    "key": "sld_fade_in_time",
+                    "value": "Fade in time"
+                },
+                {
+                    "key": "sld_fade_out_time",
+                    "value": "Fade out time"
+                },
+                {
+                    "key": "sld_text_flash_rate",
+                    "value": "Text flash rate"
+                },
+                {
+                    "key": "tooltip_bounds_size",
+                    "value": "The box that players can stand within, if they leave this area Restrictr will activate and block their vision. This value should depend on how big of a play space you have. Currently it can only be configured as a square."
+                },
+                {
+                    "key": "tooltip_color",
+                    "value": "The colour that will block the player’s vision, black is gentle on the player’s eye."
+                },
+                {
+                    "key": "tooltip_do_not_activate_if_looking_down",
+                    "value": "Disables Restrictr from enabling when players are facing downwards. In some games players have to bend down to pick up items from the ground, when they do this they bend over and leave the bounds box, for these games it can be useful to disable the vision block when players are looking down."
+                },
+                {
+                    "key": "tooltip_color_saturation",
+                    "value": "Adjust the color saturation."
+                },
+                {
+                    "key": "tooltip_color_value",
+                    "value": "Adjust the color value."
+                },
+                {
+                    "key": "tooltip_enabled",
+                    "value": "Enable Restrictr."
+                },
+                {
+                    "key": "tooltip_enabled_in_dashboard",
+                    "value": "Enables Restictr in the SteamVR dashboard so you can configure it while you are playing."
+                },
+                {
+                    "key": "tooltip_fade_in_time",
+                    "value": "How long it takes for the vision block to completely appear."
+                },
+                {
+                    "key": "tooltip_fade_out_time",
+                    "value": "How long it takes for the vision block to completely disappear."
+                },
+                {
+                    "key": "tooltip_play_alert_sound",
+                    "value": "Plays a sound when Restrictr activates."
+                },
+                {
+                    "key": "tooltip_start_with_steamvr",
+                    "value": "Automatically launch Restictr when SteamVR starts."
+                },
+                {
+                    "key": "tooltip_text_flash_rate",
+                    "value": "How rapidly the text prompts will flash to the player."
+                },
+                {
+                    "key": "tooltip_use_global_settings",
+                    "value": "For this game use the global settings."
+                },
+                {
+                    "key": "tooltip_when_to_show_bounds_box",
+                    "value": "The bounds box is the square at the player’s feet that shows the area they must stay within. It is always shown when vision is blocked so players can recenter themselves, but sometimes it may be good to keep showing the box a few seconds after the player has recentered themselves."
+                }
+            ],
+            "language": "English",
+			"iso_639_1": "en"
+			
+        },
+        {
+            "key_values": [
+                {
+                    "key": "btn_dropdown_window_ok",
+                    "value": "Aceptar"
+                },
+                {
+                    "key": "btn_game_specific_settings",
+                    "value": "Configuración de juego"
+                },
+                {
+                    "key": "btn_global_settings",
+                    "value": "Configuración global"
+                },
+                {
+                    "key": "btn_hide_advanced",
+                    "value": "Ocultar opciones avanzadas"
+                },
+                {
+                    "key": "btn_quit",
+                    "value": "Cerrar"
+                },
+                {
+                    "key": "btn_reset_to_default",
+                    "value": "Reestablecer"
+                },
+                {
+                    "key": "btn_show_advanced",
+                    "value": "Mostrar opciones avanzadas"
+                },
+                {
+                    "key": "btn_text_back",
+                    "value": "Atrás:"
+                },
+                {
+                    "key": "btn_text_forward",
+                    "value": "Adelante:"
+                },
+                {
+                    "key": "btn_text_left",
+                    "value": "Izquierda:"
+                },
+                {
+                    "key": "btn_text_return",
+                    "value": "Retroceso:"
+                },
+                {
+                    "key": "btn_text_right",
+                    "value": "Derecha:"
+                },
+                {
+                    "key": "chk_do_not_activate_if_looking_down",
+                    "value": "No activar cuando se mire hacia abajo"
+                },
+                {
+                    "key": "chk_enabled",
+                    "value": "Activado"
+                },
+                {
+                    "key": "chk_enabled_in_dashboard",
+                    "value": "Activado en el tablero"
+                },
+                {
+                    "key": "chk_play_alert_sound",
+                    "value": "Reproducir sonido de alerta"
+                },
+                {
+                    "key": "chk_start_with_steamvr",
+                    "value": "Abrir junto con SteamVR"
+                },
+                {
+                    "key": "chk_use_global_settings",
+                    "value": "Usar configuración global"
+                },
+                {
+                    "key": "drp_always_visible",
+                    "value": "Siempre visible"
+                },
+                {
+                    "key": "drp_when_to_show_bounds_box",
+                    "value": "Cuando mostrar límites"
+                },
+                {
+                    "key": "drp_when_vision_is_blocked",
+                    "value": "Cuando se bloquee la visión"
+                },
+                {
+                    "key": "drp_when_vision_is_blocked_plus_5_seconds",
+                    "value": "Cuando se bloquee la visión + 5 segundos después"
+                },
+                {
+                    "key": "lbl_color",
+                    "value": "Color:"
+                },
+                {
+                    "key": "lbl_color_blue",
+                    "value": "Azul:"
+                },
+                {
+                    "key": "lbl_color_green",
+                    "value": "Verde:"
+                },
+                {
+                    "key": "lbl_color_hue",
+                    "value": "Matiz"
+                },
+                {
+                    "key": "lbl_color_red",
+                    "value": "Rojo:"
+                },
+                {
+                    "key": "lbl_color_value",
+                    "value": "Valor"
+                },
+                {
+                    "key": "lbl_current_game",
+                    "value": "Juego actual"
+                },
+                {
+                    "key": "lbl_current_game_none",
+                    "value": "ninguno"
+                },
+                {
+                    "key": "lbl_play_area",
+                    "value": "Area de juego"
+                },
+                {
+                    "key": "lbl_play_area_unknown",
+                    "value": "desconocido"
+                },
+                {
+                    "key": "lbl_saturation",
+                    "value": "Saturación"
+                },
+                {
+                    "key": "lbl_session_time",
+                    "value": "Tiempo de sesión"
+                },
+                {
+                    "key": "lbl_session_time_hours",
+                    "value": "horas"
+                },
+                {
+                    "key": "lbl_session_time_minutes",
+                    "value": "minutos"
+                },
+                {
+                    "key": "lbl_text_settings",
+                    "value": "Configuración de texto"
+                },
+                {
+                    "key": "lbl_vision_block_activated",
+                    "value": "Bloqueo de visión activado"
+                },
+                {
+                    "key": "lbl_vision_block_activated_times",
+                    "value": "veces"
+                },
+                {
+                    "key": "lbl_vision_blocker_settings",
+                    "value": "Configuración de bloqueo de visión"
+                },
+                {
+                    "key": "lbl_window_input_field_value",
+                    "value": "Valor:"
+                },
+                {
+                    "key": "sld_bounds_size",
+                    "value": "Tamaño del límite"
+                },
+                {
+                    "key": "sld_fade_in_time",
+                    "value": "Tiempo de aparición"
+                },
+                {
+                    "key": "sld_fade_out_time",
+                    "value": "Tiempo de desaparición"
+                },
+                {
+                    "key": "sld_text_flash_rate",
+                    "value": "Frecuencia de flash de texto"
+                },
+                {
+                    "key": "tooltip_bounds_size",
+                    "value": "Ajustar los límites entre los que se posiciona el jugador, si dejan este área Restrictr se activará y bloqueará su visión. Este valor debería depender del tamaño del área de juego. En este momento solamente se puede configurar con forma de cuadrado."
+                },
+                {
+                    "key": "tooltip_color",
+                    "value": "El color que bloqueará la visión del jugador. El negro es más suave a los ojos del jugador."
+                },
+                {
+                    "key": "tooltip_do_not_activate_if_looking_down",
+                    "value": "No permite que Restrictr se active cuando el jugador mira hacia abajo. En algunos juegos los jugadores deben inclinarse para levantar objetos del suelo. Cuando lo hacen y salen de los límites, puede ser útil deshabilitar el bloqueo de la visión cuando los jugadores miran hacia abajo."
+                },
+                {
+                    "key": "tooltip_color_saturation",
+                    "value": "Ajustar la saturación del color."
+                },
+                {
+                    "key": "tooltip_color_value",
+                    "value": "Ajustar el valor del color."
+                },
+                {
+                    "key": "tooltip_enabled",
+                    "value": "Habilitar Restrictr."
+                },
+                {
+                    "key": "tooltip_enabled_in_dashboard",
+                    "value": "Habilita Restrictr en el tablero de SteamVR para que pueda configurarse mientras se juega."
+                },
+                {
+                    "key": "tooltip_fade_in_time",
+                    "value": "Tiempo que tarda el bloqueo de visión en aparecer por completo."
+                },
+                {
+                    "key": "tooltip_fade_out_time",
+                    "value": "Tiempo que tarda el bloqueo de visión en desaparecer por completo."
+                },
+                {
+                    "key": "tooltip_play_alert_sound",
+                    "value": "Reproduce un sonido cuando se activa Restrictr."
+                },
+                {
+                    "key": "tooltip_start_with_steamvr",
+                    "value": "Inicia Restrictr automáticamente cuando se inicia SteamVR."
+                },
+                {
+                    "key": "tooltip_text_flash_rate",
+                    "value": "Cuán rápido el texto hará flash al jugador."
+                },
+                {
+                    "key": "tooltip_use_global_settings",
+                    "value": "Para este juego utilizar la configuración global."
+                },
+                {
+                    "key": "tooltip_when_to_show_bounds_box",
+                    "value": "Los límites están marcados por el cuadrado a los pies del jugador que muestra el área dentro del cual deben permanecer. Siempre aparece cuando la visión se bloquea para que el jugador pueda reposicionarse, pero algunas veces puede ser buena idea que continúen mostrándose los límites unos segundos luego de que el jugador se haya reposicionado."
+                }
+            ],
+            "language": "Español",
+			"iso_639_1": "es"
+        },
+        {
+            "key_values": [
+                {
+                    "key": "btn_reset_to_default",
+                    "value": "麼定種世；鄉一保分是人"
+                }
+            ],
+            "language": "中文",
+			"iso_639_1": "zh"
+        }
+    ]
+}

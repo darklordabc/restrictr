@@ -7,8 +7,11 @@ public class UIStatsCurrentGame : MonoBehaviour {
 
     private Text text;
 
-	// Use this for initialization
-	void Start () {
+    public BufferLocalizer bufferLocalizerCurrentGame;
+    public BufferLocalizer bufferLocalizerNone;
+
+    // Use this for initialization
+    void Start () {
         text = GetComponent<Text>();
 	}
 	
@@ -16,9 +19,9 @@ public class UIStatsCurrentGame : MonoBehaviour {
 	void Update () {
         string gameName = PlayBoundsManager.instance.GetRunningAppIdName();
         if (gameName != null) {
-            text.text = "Current game: <color=red>" + gameName + "</color>";
+            text.text = bufferLocalizerCurrentGame.localizedValue + ": <color=red>" + gameName + "</color>";
         } else {
-            text.text = "Current game: <color=red>none</color>";
+            text.text = bufferLocalizerCurrentGame.localizedValue + ": <color=red>" + bufferLocalizerNone.localizedValue + "</color>";
         }
 	}
 }

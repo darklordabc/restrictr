@@ -6,6 +6,9 @@ using Valve.VR;
 
 public class UIPlayArea : MonoBehaviour {
 
+    public BufferLocalizer bufferLocalizer;
+    public BufferLocalizer bufferLocalizerUnknown;
+
     private Text text;
 
 	// Use this for initialization
@@ -18,7 +21,7 @@ public class UIPlayArea : MonoBehaviour {
         float sizeX = 0f;
         float sizeZ = 0f;
 
-        text.text = "Play area = ";
+        text.text = bufferLocalizer.localizedValue + " = ";
 
         try
         {
@@ -28,11 +31,11 @@ public class UIPlayArea : MonoBehaviour {
             }
             else
             {
-                text.text += "unknown";
+                text.text += bufferLocalizerUnknown.localizedValue;
             }
         } catch
         {
-            text.text += "unknown";
+            text.text += bufferLocalizerUnknown.localizedValue;
         }
 	}
 }

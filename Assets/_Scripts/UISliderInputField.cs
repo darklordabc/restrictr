@@ -13,7 +13,9 @@ public class UISliderInputField : MonoBehaviour {
     private Slider slider;
     private PlayBounds_Menu_Redux menu;
 
-    public string textName;
+    //public string textName;
+
+    public BufferLocalizer bufferLocalizer;
 
 
     // Use this for initialization
@@ -34,7 +36,7 @@ public class UISliderInputField : MonoBehaviour {
     }
 
     public void OnClick() {
-        UIWindowInputField.instance.Show(textName, slider.value.ToString("F2"));
+        UIWindowInputField.instance.Show(bufferLocalizer.localizedValue, slider.value.ToString("F2"));
         bSelected = true;
     }
 }

@@ -10,6 +10,10 @@ public class UIDropdownGames : MonoBehaviour {
     public Text label;
     public Text text;
 
+    public BufferLocalizer bufferLocalizer;
+    public BufferLocalizer bufferLocalizerCurrentGame;
+    public BufferLocalizer bufferLocalizerCurrentGameNone;
+
     private string[] elements;
     private int[] elementsAppId;
     private int selectedIndex;
@@ -38,7 +42,7 @@ public class UIDropdownGames : MonoBehaviour {
         List<string> elementsList = new List<string>();
         List<int> elementsAppIdList = new List<int>();
 
-        elementsList.Add("Current game: "+(PlayBoundsManager.instance.IsRunningAnApp() ? PlayBoundsManager.instance.GetRunningAppIdName() : "<none>"));
+        elementsList.Add(bufferLocalizerCurrentGame.localizedValue + ": "+(PlayBoundsManager.instance.IsRunningAnApp() ? PlayBoundsManager.instance.GetRunningAppIdName() : "<"+bufferLocalizerCurrentGameNone.localizedValue+">"));
         elementsAppIdList.Add(-1);
 
         elementsAppIdList.AddRange(PlayBounds_Prefs_Handler.instance.GetGames());
@@ -51,7 +55,7 @@ public class UIDropdownGames : MonoBehaviour {
     }
 
     public void OnClick() {
-        UIWindowDropdown.instance.Show("Game specific settings", elements, selectedIndex);
+        UIWindowDropdown.instance.Show(bufferLocalizer.localizedValue, elements, selectedIndex);
         bSelected = true;
     }
 }

@@ -57,6 +57,18 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
         }
     }
 
+    public string language
+    {
+        get { return prefs.global.language; }
+        set
+        {
+            Debug.Log("Language " + value);
+            prefs.global.language = value;
+            LanguageManager.instance.SelectLanguage(value);
+            Save();
+        }
+    }
+
     public bool gameUseGlobal
     {
         get
@@ -1344,6 +1356,7 @@ public class PlayBoundsPrefs
     [System.Serializable]
     public class PlayBoundPrefsGlobal
     {
+        public string language = "none";
         public bool StartWithSteamVR = false;
         public PlayBoundPrefsSettings settings;
     }

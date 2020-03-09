@@ -20,9 +20,11 @@ public class UITooltip : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        rectBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, text.preferredWidth+12);
-
         text.text = tooltipText;
+
+        rectBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Mathf.Min(text.preferredWidth+12, 500f));
+        rectBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, text.preferredHeight + 12);
+
         goObject.SetActive(tooltipText != "");
 
         tooltipText = "";

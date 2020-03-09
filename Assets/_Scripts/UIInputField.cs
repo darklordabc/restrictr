@@ -12,6 +12,7 @@ public class UIInputField : MonoBehaviour {
 
     public string textName;
     public Text text;
+    public Text txtLabel;
 
     private PlayBounds_Menu_Redux menu;
 
@@ -32,7 +33,7 @@ public class UIInputField : MonoBehaviour {
     }
 
     public void OnClick() {
-        UIWindowInputField.instance.Show(textName, text.text);
+        UIWindowInputField.instance.Show(txtLabel.text, text.text);
         bSelected = true;
     }
 }

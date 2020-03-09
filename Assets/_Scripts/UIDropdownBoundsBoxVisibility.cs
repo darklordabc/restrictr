@@ -10,7 +10,7 @@ public class UIDropdownBoundsBoxVisibility : MonoBehaviour {
     public Text label;
     public Text text;
 
-    public string[] elements;
+    public BufferLocalizer[] elements;
     public int selectedIndex;
 
 	// Use this for initialization
@@ -25,14 +25,22 @@ public class UIDropdownBoundsBoxVisibility : MonoBehaviour {
             GetComponentInParent<PlayBounds_Menu_Redux>().SetBoundsBoxVisibility();
             bSelected = false;
         }
+
         if (elements.Length > 0) {
             selectedIndex = Mathf.Clamp(selectedIndex, 0, elements.Length);
-            text.text = elements[selectedIndex];
+            text.text = elements[selectedIndex].localizedValue;
         }
     }
 
     public void OnClick() {
-        UIWindowDropdown.instance.Show(label.text, elements, selectedIndex);
+        List<string> elementStrings = new List<string>();
+
+        foreach (BufferLocalizer b in elements)
+        {
+            elementStrings.Add(b.localizedValue);
+        }
+
+        UIWindowDropdown.instance.Show(label.text, elementStrings.ToArray(), selectedIndex);
             bSelected = true;
     }
 }

@@ -5,13 +5,13 @@ using UnityEngine.EventSystems;
 
 public class UITooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
-    public string text = "TO DO";
+    public BufferLocalizer bufferLocalizer;
     private bool bShowTooltip;
 
 	// Use this for initialization
 	void Update () {
         if (bShowTooltip) {
-            UITooltip.instance.ShowTooltip(text, Input.mousePosition);
+            UITooltip.instance.ShowTooltip(bufferLocalizer.localizedValue, Input.mousePosition);
         }
     }
 

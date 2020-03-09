@@ -7,8 +7,12 @@ public class UIStatsSessionTime : MonoBehaviour {
 
     private Text text;
 
-	// Use this for initialization
-	void Start () {
+    public BufferLocalizer bufferLocalizerSessionTime;
+    public BufferLocalizer bufferLocalizerSessionTimeHours;
+    public BufferLocalizer bufferLocalizerSessionTimeMinutes;
+
+    // Use this for initialization
+    void Start () {
         text = GetComponent<Text>();
 	}
 	
@@ -16,7 +20,9 @@ public class UIStatsSessionTime : MonoBehaviour {
 	void Update () {
         float gameTime = PlayBoundsManager.instance.GetRunningAppTime();
         if (gameTime > 0f) {
-            text.text = "Session time: <color=red>" + Mathf.FloorToInt(gameTime / 3600f) + " hours, " + Mathf.FloorToInt(gameTime / 60f) % 60 + " minutes</color>";
+            text.text = bufferLocalizerSessionTime.localizedValue + ": <color=red>" 
+                + Mathf.FloorToInt(gameTime / 3600f) + " " + bufferLocalizerSessionTimeHours.localizedValue 
+                + ", " + Mathf.FloorToInt(gameTime / 60f) % 60 + " "+ bufferLocalizerSessionTimeMinutes.localizedValue + "</color>";
         } else {
             text.text = "";
         }

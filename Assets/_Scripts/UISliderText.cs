@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode]
 public class UISliderText : MonoBehaviour {
 
     public Text text;
@@ -12,6 +11,8 @@ public class UISliderText : MonoBehaviour {
     public string textPrev;
     public string textPost;
 
+    public BufferLocalizer bufferLocalizer;
+
     // Use this for initialization
     void Start () {
 		
@@ -19,6 +20,6 @@ public class UISliderText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = textPrev + slider.value.ToString("F2") + textPost;
+        text.text = bufferLocalizer.localizedValue + textPrev + slider.value.ToString("F2") + textPost;
     }
 }
