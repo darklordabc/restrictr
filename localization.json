@@ -488,8 +488,240 @@
         {
             "key_values": [
                 {
+                    "key": "btn_dropdown_window_ok",
+                    "value": "好的"
+                },
+                {
+                    "key": "btn_game_specific_settings",
+                    "value": "游戏特定设置"
+                },
+                {
+                    "key": "btn_global_settings",
+                    "value": "全局设置"
+                },
+                {
+                    "key": "btn_hide_advanced",
+                    "value": "隐藏高级"
+                },
+                {
+                    "key": "btn_quit",
+                    "value": "退出"
+                },
+                {
                     "key": "btn_reset_to_default",
-                    "value": "麼定種世；鄉一保分是人"
+                    "value": "重置为默认设置"
+                },
+                {
+                    "key": "btn_show_advanced",
+                    "value": "显示高级"
+                },
+                {
+                    "key": "btn_text_back",
+                    "value": "后退:"
+                },
+                {
+                    "key": "btn_text_forward",
+                    "value": "前进:"
+                },
+                {
+                    "key": "btn_text_left",
+                    "value": "左:"
+                },
+                {
+                    "key": "btn_text_return",
+                    "value": "返回:"
+                },
+                {
+                    "key": "btn_text_right",
+                    "value": "右:"
+                },
+                {
+                    "key": "chk_do_not_activate_if_looking_down",
+                    "value": "向下看时不激活"
+                },
+                {
+                    "key": "chk_enabled",
+                    "value": "启用"
+                },
+                {
+                    "key": "chk_enabled_in_dashboard",
+                    "value": "在仪表盘中启用"
+                },
+                {
+                    "key": "chk_play_alert_sound",
+                    "value": "播放警报声音"
+                },
+                {
+                    "key": "chk_start_with_steamvr",
+                    "value": "从SteamVR开始"
+                },
+                {
+                    "key": "chk_use_global_settings",
+                    "value": "使用全局设置"
+                },
+                {
+                    "key": "drp_always_visible",
+                    "value": "始终可见"
+                },
+                {
+                    "key": "drp_when_to_show_bounds_box",
+                    "value": "何时显示边界框"
+                },
+                {
+                    "key": "drp_when_vision_is_blocked",
+                    "value": "何时视图锁定"
+                },
+                {
+                    "key": "drp_when_vision_is_blocked_plus_5_seconds",
+                    "value": "当视图锁定后+5秒"
+                },
+                {
+                    "key": "lbl_color",
+                    "value": "颜色:"
+                },
+                {
+                    "key": "lbl_color_blue",
+                    "value": "蓝:"
+                },
+                {
+                    "key": "lbl_color_green",
+                    "value": "绿:"
+                },
+                {
+                    "key": "lbl_color_hue",
+                    "value": "色相"
+                },
+                {
+                    "key": "lbl_color_red",
+                    "value": "红:"
+                },
+                {
+                    "key": "lbl_color_value",
+                    "value": "数值"
+                },
+                {
+                    "key": "lbl_current_game",
+                    "value": "当前游戏"
+                },
+                {
+                    "key": "lbl_current_game_none",
+                    "value": "空"
+                },
+                {
+                    "key": "lbl_play_area",
+                    "value": "游戏范围"
+                },
+                {
+                    "key": "lbl_play_area_unknown",
+                    "value": "未知"
+                },
+                {
+                    "key": "lbl_saturation",
+                    "value": "饱和度"
+                },
+                {
+                    "key": "lbl_session_time",
+                    "value": "会话时间"
+                },
+                {
+                    "key": "lbl_session_time_hours",
+                    "value": "小时"
+                },
+                {
+                    "key": "lbl_session_time_minutes",
+                    "value": "分钟"
+                },
+                {
+                    "key": "lbl_text_settings",
+                    "value": "文本设置"
+                },
+                {
+                    "key": "lbl_vision_block_activated",
+                    "value": "视图锁定激活"
+                },
+                {
+                    "key": "lbl_vision_block_activated_times",
+                    "value": "时间"
+                },
+                {
+                    "key": "lbl_vision_blocker_settings",
+                    "value": "视图锁定设置"
+                },
+                {
+                    "key": "lbl_window_input_field_value",
+                    "value": "数值:"
+                },
+                {
+                    "key": "sld_bounds_size",
+                    "value": "边框尺寸"
+                },
+                {
+                    "key": "sld_fade_in_time",
+                    "value": "淡入时间"
+                },
+                {
+                    "key": "sld_fade_out_time",
+                    "value": "淡出时间"
+                },
+                {
+                    "key": "sld_text_flash_rate",
+                    "value": "文本刷新率"
+                },
+                {
+                    "key": "tooltip_bounds_size",
+                    "value": "玩家可站在该框架内，若玩家离开该区域限制则会激活Restrictr虚拟墙，并锁定其视图。该值应取决于你有多大的游戏空间。目前只能配置为正方形。."
+                },
+                {
+                    "key": "tooltip_color",
+                    "value": "锁定玩家视图的颜色中黑色对玩家的眼睛是相对温和的。"
+                },
+                {
+                    "key": "tooltip_do_not_activate_if_looking_down",
+                    "value": "当玩家面部朝下时禁止启用Restrictr虚拟墙。在部分游戏中，玩家必须弯腰从地上捡起物品，当其这样做时，弯腰导致离开边界框，对于这些游戏来说，当玩家向下方看时，禁用视图锁定是很有用的。."
+                },
+                {
+                    "key": "tooltip_color_saturation",
+                    "value": "调整颜色饱和度。"
+                },
+                {
+                    "key": "tooltip_color_value",
+                    "value": "调整颜色数值。"
+                },
+                {
+                    "key": "tooltip_enabled",
+                    "value": "启用Restrictr虚拟墙。"
+                },
+                {
+                    "key": "tooltip_enabled_in_dashboard",
+                    "value": "在SteamVR仪表板中启用Restrictr虚拟墙，以便您可以在游戏中设置。"
+                },
+                {
+                    "key": "tooltip_fade_in_time",
+                    "value": "视图锁定完全出现需要多长时间。"
+                },
+                {
+                    "key": "tooltip_fade_out_time",
+                    "value": "视图锁定完全消失需要多长时间。"
+                },
+                {
+                    "key": "tooltip_play_alert_sound",
+                    "value": "当Restrictr虚拟墙启用时播放声音"
+                },
+                {
+                    "key": "tooltip_start_with_steamvr",
+                    "value": "SteamVR 开始时自动启动Restrictr虚拟墙。"
+                },
+                {
+                    "key": "tooltip_text_flash_rate",
+                    "value": "文本提示将以多快的速度快速发送给玩家。"
+                },
+                {
+                    "key": "tooltip_use_global_settings",
+                    "value": "该游戏使用全局设置"
+                },
+                {
+                    "key": "tooltip_when_to_show_bounds_box",
+                    "value": "边界框为玩家脚下的正方形，以显示其必须处于该区域。当视图锁定，它会一直显示，玩家就可以重新进入自己的视图中，但有时在玩家重新进入自己的视图几秒中后继续显示这个框架可能会更好。"
                 }
             ],
             "language": "中文",
