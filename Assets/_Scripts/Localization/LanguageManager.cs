@@ -22,7 +22,7 @@ public class LanguageManager : MonoBehaviour {
         instance = this;
 
         //Read JSON file
-        string text = File.ReadAllText(Application.dataPath + "\\localization.json", System.Text.Encoding.UTF8);
+        string text = File.ReadAllText(Application.dataPath + "\\..\\localization.json", System.Text.Encoding.UTF8);
         Debug.Log(text);
 
         data = JsonUtility.FromJson<Data>(text);
