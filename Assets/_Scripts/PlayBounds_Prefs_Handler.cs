@@ -501,6 +501,186 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
         }
     }
 
+    public bool globalTextReturnCustomized
+    {
+        get { return prefs.global.settings.textReturnCustomized; }
+        set
+        {
+            if (!value.Equals(globalTextReturnCustomized))
+            {
+                prefs.global.settings.textReturnCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool gameTextReturnCustomized
+    {
+        get
+        {
+            if (prefsGame != null)
+            {
+                return prefsGame.settings.textReturnCustomized;
+            }
+            else
+            {
+                return globalTextReturnCustomized;
+            }
+        }
+        set
+        {
+            if (prefsGame != null)
+            {
+                prefsGame.settings.textReturnCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool globalTextStepLeftCustomized
+    {
+        get { return prefs.global.settings.textStepLeftCustomized; }
+        set
+        {
+            if (!value.Equals(globalTextStepLeftCustomized))
+            {
+                prefs.global.settings.textStepLeftCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool gameTextStepLeftCustomized
+    {
+        get
+        {
+            if (prefsGame != null)
+            {
+                return prefsGame.settings.textStepLeftCustomized;
+            }
+            else
+            {
+                return globalTextStepLeftCustomized;
+            }
+        }
+        set
+        {
+            if (prefsGame != null)
+            {
+                prefsGame.settings.textStepLeftCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool globalTextStepRightCustomized
+    {
+        get { return prefs.global.settings.textStepRightCustomized; }
+        set
+        {
+            if (!value.Equals(globalTextStepRightCustomized))
+            {
+                prefs.global.settings.textStepRightCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool gameTextStepRightCustomized
+    {
+        get
+        {
+            if (prefsGame != null)
+            {
+                return prefsGame.settings.textStepRightCustomized;
+            }
+            else
+            {
+                return globalTextStepRightCustomized;
+            }
+        }
+        set
+        {
+            if (prefsGame != null)
+            {
+                prefsGame.settings.textStepRightCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool globalTextStepBackCustomized
+    {
+        get { return prefs.global.settings.textStepBackCustomized; }
+        set
+        {
+            if (!value.Equals(globalTextStepBackCustomized))
+            {
+                prefs.global.settings.textStepBackCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool gameTextStepBackCustomized
+    {
+        get
+        {
+            if (prefsGame != null)
+            {
+                return prefsGame.settings.textStepBackCustomized;
+            }
+            else
+            {
+                return globalTextStepBackCustomized;
+            }
+        }
+        set
+        {
+            if (prefsGame != null)
+            {
+                prefsGame.settings.textStepBackCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool globalTextStepForwardCustomized
+    {
+        get { return prefs.global.settings.textStepForwardCustomized; }
+        set
+        {
+            if (!value.Equals(globalTextStepForwardCustomized))
+            {
+                prefs.global.settings.textStepForwardCustomized = value;
+                Save();
+            }
+        }
+    }
+
+    public bool gameTextStepForwardCustomized
+    {
+        get
+        {
+            if (prefsGame != null)
+            {
+                return prefsGame.settings.textStepForwardCustomized;
+            }
+            else
+            {
+                return globalTextStepForwardCustomized;
+            }
+        }
+        set
+        {
+            if (prefsGame != null)
+            {
+                prefsGame.settings.textStepForwardCustomized = value;
+                Save();
+            }
+        }
+    }
+
     public string globalTextReturn
     {
         get { return prefs.global.settings.textReturn; }
@@ -822,11 +1002,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
     {
         if (prefsGame != null && !prefsGame.useGlobal)
         {
-            return gameTextReturn;
+            if (gameTextReturnCustomized)
+                return gameTextReturn;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_return");
         }
         else
         {
-            return globalTextReturn;
+            if (globalTextReturnCustomized)
+                return globalTextReturn;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_return");
         }
     }
 
@@ -834,11 +1020,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
     {
         if (prefsGame != null && !prefsGame.useGlobal)
         {
-            return gameTextStepLeft;
+            if (gameTextStepLeftCustomized)
+                return gameTextStepLeft;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_step_left");
         }
         else
         {
-            return globalTextStepLeft;
+            if (globalTextStepLeftCustomized)
+                return globalTextStepLeft;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_step_left");
         }
     }
 
@@ -846,11 +1038,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
     {
         if (prefsGame != null && !prefsGame.useGlobal)
         {
-            return gameTextStepRight;
+            if (gameTextStepRightCustomized)
+                return gameTextStepRight;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_step_right");
         }
         else
         {
-            return globalTextStepRight;
+            if (globalTextStepRightCustomized)
+                return globalTextStepRight;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_step_right");
         }
     }
 
@@ -858,11 +1056,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
     {
         if (prefsGame != null && !prefsGame.useGlobal)
         {
-            return gameTextStepBack;
+            if (gameTextStepBackCustomized)
+                return gameTextStepBack;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_step_back");
         }
         else
         {
-            return globalTextStepBack;
+            if (globalTextStepBackCustomized)
+                return globalTextStepBack;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_step_back");
         }
     }
 
@@ -870,11 +1074,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
     {
         if (prefsGame != null && !prefsGame.useGlobal)
         {
-            return gameTextStepForward;
+            if (gameTextStepForwardCustomized)
+                return gameTextStepForward;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_step_forward");
         }
         else
         {
-            return globalTextStepForward;
+            if (globalTextStepForwardCustomized)
+                return globalTextStepForward;
+            else
+                return LanguageManager.instance.GetTranslation("default_text_step_forward");
         }
     }
 
@@ -1093,11 +1303,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
             case "Return":
                 if (!bIsGlobal)
                 {
-                    text = gameTextReturn;
+                    if (gameTextReturnCustomized)
+                        text = gameTextReturn;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_return");
                 }
                 else
                 {
-                    text = globalTextReturn;
+                    if (globalTextReturnCustomized)
+                        text = globalTextReturn;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_return");
                 }
 
                 break;
@@ -1105,11 +1321,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
             case "Left":
                 if (!bIsGlobal)
                 {
-                    text = gameTextStepLeft;
+                    if (gameTextStepLeftCustomized)
+                        text = gameTextStepLeft;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_step_left");
                 }
                 else
                 {
-                    text = globalTextStepLeft;
+                    if (globalTextStepLeftCustomized)
+                        text = globalTextStepLeft;
+                    else 
+                        text = LanguageManager.instance.GetTranslation("default_text_step_left");
                 }
 
                 break;
@@ -1117,11 +1339,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
             case "Right":
                 if (!bIsGlobal)
                 {
-                    text = gameTextStepRight;
+                    if (gameTextStepRightCustomized)
+                        text = gameTextStepRight;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_step_right");
                 }
                 else
                 {
-                    text = globalTextStepRight;
+                    if (globalTextStepRightCustomized)
+                        text = globalTextStepRight;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_step_right");
                 }
 
                 break;
@@ -1129,11 +1357,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
             case "Back":
                 if (!bIsGlobal)
                 {
-                    text = gameTextStepBack;
+                    if (gameTextStepBackCustomized)
+                        text = gameTextStepBack;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_step_back");
                 }
                 else
                 {
-                    text = globalTextStepBack;
+                    if (globalTextStepBackCustomized)
+                        text = globalTextStepBack;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_step_back");
                 }
 
                 break;
@@ -1141,11 +1375,17 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
             case "Forward":
                 if (!bIsGlobal)
                 {
-                    text = gameTextStepForward;
+                    if (gameTextStepForwardCustomized)
+                        text = gameTextStepForward;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_step_forward");
                 }
                 else
                 {
-                    text = globalTextStepForward;
+                    if (globalTextStepForwardCustomized)
+                        text = globalTextStepForward;
+                    else
+                        text = LanguageManager.instance.GetTranslation("default_text_step_forward");
                 }
 
                 break;
@@ -1162,10 +1402,12 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
                 if (!bIsGlobal)
                 {
                     gameTextReturn = text;
+                    gameTextReturnCustomized = true;
                 }
                 else
                 {
                     globalTextReturn = text;
+                    globalTextReturnCustomized = true;
                 }
 
                 break;
@@ -1174,10 +1416,12 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
                 if (!bIsGlobal)
                 {
                     gameTextStepLeft = text;
+                    gameTextStepLeftCustomized = true;
                 }
                 else
                 {
                     globalTextStepLeft = text;
+                    globalTextStepLeftCustomized = true;
                 }
 
                 break;
@@ -1186,10 +1430,12 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
                 if (!bIsGlobal)
                 {
                     gameTextStepRight = text;
+                    gameTextStepRightCustomized = true;
                 }
                 else
                 {
                     globalTextStepRight = text;
+                    globalTextStepRightCustomized = true;
                 }
 
                 break;
@@ -1198,10 +1444,12 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
                 if (!bIsGlobal)
                 {
                     gameTextStepBack = text;
+                    gameTextStepBackCustomized = true;
                 }
                 else
                 {
                     globalTextStepBack = text;
+                    globalTextStepBackCustomized = true;
                 }
 
                 break;
@@ -1210,10 +1458,12 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
                 if (!bIsGlobal)
                 {
                     gameTextStepForward = text;
+                    gameTextStepForwardCustomized = true;
                 }
                 else
                 {
                     globalTextStepForward = text;
+                    globalTextStepForwardCustomized = true;
                 }
 
                 break;
@@ -1337,6 +1587,12 @@ public class PlayBoundsPrefs
         public float timeFadeIn = 0.2f;
         public float timeFadeOut = 0.5f;
         public float timeTextFlash = 0.5f;
+
+        public bool textReturnCustomized = false;
+        public bool textStepLeftCustomized = false;
+        public bool textStepRightCustomized = false;
+        public bool textStepBackCustomized = false;
+        public bool textStepForwardCustomized = false;
 
         public string textReturn = "RETURN TO CENTER";
         public string textStepLeft = "STEP LEFT";

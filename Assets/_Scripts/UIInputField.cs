@@ -27,9 +27,9 @@ public class UIInputField : MonoBehaviour {
     void Update() {
         if (bSelected && UIWindowInputField.instance.IsDone()) {
             PlayBounds_Prefs_Handler.instance.SetText(menu.activeTab == PlayBounds_Menu_Redux.ActiveTab.Global, textName, UIWindowInputField.instance.GetText());
-            text.text = PlayBounds_Prefs_Handler.instance.GetText(menu.activeTab == PlayBounds_Menu_Redux.ActiveTab.Global, textName);
             bSelected = false;
         }
+        text.text = PlayBounds_Prefs_Handler.instance.GetText(menu.activeTab == PlayBounds_Menu_Redux.ActiveTab.Global, textName);
     }
 
     public void OnClick() {

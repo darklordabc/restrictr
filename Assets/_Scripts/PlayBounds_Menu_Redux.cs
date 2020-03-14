@@ -85,11 +85,12 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
             colorRedSlider.value = prefs.globalColorRed;
             colorGreenSlider.value = prefs.globalColorGreen;
             colorBlueSlider.value = prefs.globalColorBlue;
-            textReturnToCenter.text = prefs.globalTextReturn;
-            textStepLeft.text = prefs.globalTextStepLeft;
-            textStepRight.text = prefs.globalTextStepRight;
-            textStepBack.text = prefs.globalTextStepBack;
-            textStepForward.text = prefs.globalTextStepForward;
+
+            textReturnToCenter.text = prefs.GetText(true, "Return");
+            textStepLeft.text = prefs.GetText(true, "Left");
+            textStepRight.text = prefs.GetText(true, "Right");
+            textStepBack.text = prefs.GetText(true, "Back");
+            textStepForward.text = prefs.GetText(true, "Forward");
         }
         else
         {
@@ -107,11 +108,12 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
             colorRedSlider.value = prefs.gameColorRed;
             colorGreenSlider.value = prefs.gameColorGreen;
             colorBlueSlider.value = prefs.gameColorBlue;
-            textReturnToCenter.text = prefs.gameTextReturn;
-            textStepLeft.text = prefs.gameTextStepLeft;
-            textStepRight.text = prefs.gameTextStepRight;
-            textStepBack.text = prefs.gameTextStepBack;
-            textStepForward.text = prefs.gameTextStepForward;
+
+            textReturnToCenter.text = prefs.GetText(false, "Return");
+            textStepLeft.text = prefs.GetText(false, "Left");
+            textStepRight.text = prefs.GetText(false, "Right");
+            textStepBack.text = prefs.GetText(false, "Back");
+            textStepForward.text = prefs.GetText(false, "Forward");
         }
     }
 

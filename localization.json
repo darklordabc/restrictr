@@ -75,6 +75,26 @@
                     "value": "Use global settings"
                 },
                 {
+                    "key": "default_text_return",
+                    "value": "RETURN TO CENTER"
+                },
+                {
+                    "key": "default_text_step_left",
+                    "value": "STEP LEFT"
+                },
+                {
+                    "key": "default_text_step_right",
+                    "value": "STEP RIGHT"
+                },
+                {
+                    "key": "default_text_step_back",
+                    "value": "STEP BACK"
+                },
+                {
+                    "key": "default_text_step_forward",
+                    "value": "STEP FORWARD"
+                },
+                {
                     "key": "drp_always_visible",
                     "value": "Always visible"
                 },
@@ -316,6 +336,26 @@
                 {
                     "key": "chk_use_global_settings",
                     "value": "Usar configuración global"
+                },
+                {
+                    "key": "default_text_return",
+                    "value": "RETROCEDE AL CENTRO"
+                },
+                {
+                    "key": "default_text_step_left",
+                    "value": "VE HACIA LA IZQUIERDA"
+                },
+                {
+                    "key": "default_text_step_right",
+                    "value": "VE HACIA LA DERECHA"
+                },
+                {
+                    "key": "default_text_step_back",
+                    "value": "RETROCEDE"
+                },
+                {
+                    "key": "default_text_step_forward",
+                    "value": "AVANZA"
                 },
                 {
                     "key": "drp_always_visible",
