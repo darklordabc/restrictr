@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,14 +52,31 @@ public class PlayBoundsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (System.Diagnostics.Process.GetProcessesByName("vrserver").Length == 0)
-        {
+        //if (System.Diagnostics.Process.GetProcessesByName("vrserver").Length == 0)
+        //{
             //Application.Quit();
             //Debug.Log("application quit");
+        //}
+        
+        
+        float boundsSizeX = 1f;
+        float boundsSizeZ = 1f;
+
+        if (PlayBounds_Prefs_Handler.instance.GetCustomArea())
+        {
+            Vector2 boundsSize = PlayBounds_Prefs_Handler.instance.GetBoundsCustomSize();
+            boundsSizeX = boundsSize.x;
+            boundsSizeZ = boundsSize.y;
+        }
+        else
+        {
+            float boundsSize = PlayBounds_Prefs_Handler.instance.GetBoundsSize();
+            boundsSizeX = boundsSizeZ = boundsSize;
         }
 
-        float halfBounds = prefs.GetBoundsSize() / 2f;
-        if ((Mathf.Abs(tHMD.position.z) > halfBounds || Mathf.Abs(tHMD.position.x) > halfBounds))
+        float halfXBounds = boundsSizeX / 2f;
+        float halfZBounds = boundsSizeZ / 2f;
+        if ((Mathf.Abs(tHMD.position.z) > halfZBounds || Mathf.Abs(tHMD.position.x) > halfXBounds))
         {
             if (!prefs.GetDoNotActivateIfFacingDown() || !bInBoundsLookingDown)
             {
@@ -105,8 +123,7 @@ public class PlayBoundsManager : MonoBehaviour
             animTimer = 0f;
         }
 
-
-        overlayFloor.widthInMeters = prefs.GetBoundsSize();
+        overlayFloor.widthInMeters = Mathf.Max(boundsSizeX,boundsSizeZ);
         switch (prefs.GetBoundsBoxVisibility())
         {
             case PlayBoundsPrefs.PlayBoundPrefsSettings.BoundsBoxVisibility.WhenVisionIsBlocked:
@@ -133,7 +150,7 @@ public class PlayBoundsManager : MonoBehaviour
 
 
         //Audio effect
-        if (prefs.MustPlayAlertSound() && lastAnimTimer == 0f && animTimer > 0f)
+        if (prefs.MustPlayAlertSound() && Math.Abs(lastAnimTimer) < 0.001f && animTimer > 0f)
         {
             System.Media.SoundPlayer player =
                 new System.Media.SoundPlayer(Application.dataPath + "\\..\\Audio\\alert.wav");
@@ -145,7 +162,7 @@ public class PlayBoundsManager : MonoBehaviour
         UpdateRunningApp();
     }
 
-    public void UpdateRunningApp()
+    private void UpdateRunningApp()
     {
         if (runningAppId == -1)
         {
@@ -185,12 +202,12 @@ public class PlayBoundsManager : MonoBehaviour
 
         //Search for Installed 
         string[] appIds = registryKeyRoot.GetSubKeyNames();
-        
-        if (appIds.Length < 1)//if no apps running return right away
+
+        if (appIds.Length < 1) //if no apps running return right away
         {
             return -1;
         }
-        
+
         int index = 0;
         bool bFoundRunning = false;
         while (index < appIds.Length && !bFoundRunning)

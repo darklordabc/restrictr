@@ -191,6 +191,14 @@
                     "value": "Bounds size"
                 },
                 {
+                    "key": "sld_width",
+                    "value": "Bounds Width"
+                },
+                {
+                    "key": "sld_height",
+                    "value": "Bounds Height"
+                },
+                {
                     "key": "sld_fade_in_time",
                     "value": "Fade in time"
                 },
@@ -257,6 +265,14 @@
                 {
                     "key": "tooltip_when_to_show_bounds_box",
                     "value": "The bounds box is the square at the player’s feet that shows the area they must stay within. It is always shown when vision is blocked so players can recenter themselves, but sometimes it may be good to keep showing the box a few seconds after the player has recentered themselves."
+                },
+                {
+                    "key": "chk_custom_area_size",
+                    "value": "Custom Area Size"
+                },
+                {
+                    "key": "tooltip_custom_area_size",
+                    "value": "Custom Area Size toggle. Allows to set width and height as separate parameters."
                 }
             ],
             "language": "English",

@@ -125,6 +125,41 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
         }
     }
 
+  
+    
+    public bool globalCustomAreaSize
+    {
+        get { return prefs.global.settings.customAreaSize; }
+        set
+        {
+            prefs.global.settings.customAreaSize = value;
+            Save();
+        }
+    }
+    
+    public bool gameCustomAreaSize
+    {
+        get
+        {
+            if (prefsGame != null)
+            {
+                return prefsGame.settings.customAreaSize;
+            }
+            else
+            {
+                return globalCustomAreaSize;
+            }
+        }
+        set
+        {
+            if (prefsGame != null)
+            {
+                prefsGame.settings.customAreaSize = value;
+                Save();
+            }
+        }
+    }
+    
     public bool globalEnabledInDashboard
     {
         get { return prefs.global.settings.enabledInDashboard; }
@@ -376,6 +411,72 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
         {
             prefs.global.settings.boundsSize = value;
             Save();
+        }
+    }
+    
+    public float globalWidthBoundsSize
+    {
+        get { return prefs.global.settings.widthBoundsSize; }
+        set
+        {
+            prefs.global.settings.widthBoundsSize = value;
+            Save();
+        }
+    }
+    
+    public float globalHeightBoundsSize
+    {
+        get { return prefs.global.settings.heightBoundsSize; }
+        set
+        {
+            prefs.global.settings.heightBoundsSize = value;
+            Save();
+        }
+    }
+    
+    public float gameWidthBoundsSize
+    {
+        get
+        {
+            if (prefsGame != null)
+            {
+                return prefsGame.settings.widthBoundsSize;
+            }
+            else
+            {
+                return globalWidthBoundsSize;
+            }
+        }
+        set
+        {
+            if (prefsGame != null)
+            {
+                prefsGame.settings.widthBoundsSize = value;
+                Save();
+            }
+        }
+    }
+    
+    public float gameHeightBoundsSize
+    {
+        get
+        {
+            if (prefsGame != null)
+            {
+                return prefsGame.settings.heightBoundsSize;
+            }
+            else
+            {
+                return globalHeightBoundsSize;
+            }
+        }
+        set
+        {
+            if (prefsGame != null)
+            {
+                prefsGame.settings.heightBoundsSize = value;
+                Save();
+            }
         }
     }
 
@@ -860,6 +961,19 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
             }
         }
     }
+    
+    
+    public bool GetCustomArea()
+    {
+        if (prefsGame != null && !prefsGame.useGlobal)
+        {
+            return gameCustomAreaSize;
+        }
+        else
+        {
+            return globalCustomAreaSize;
+        }
+    }
 
 
     public float GetBoundsSize()
@@ -871,6 +985,18 @@ public class PlayBounds_Prefs_Handler : MonoBehaviour
         else
         {
             return globalBoundsSize;
+        }
+    }
+    
+    public Vector2 GetBoundsCustomSize()
+    {
+        if (prefsGame != null && !prefsGame.useGlobal)
+        {
+            return new Vector2(gameWidthBoundsSize, gameHeightBoundsSize);
+        }
+        else
+        {
+            return new Vector2(globalWidthBoundsSize, globalHeightBoundsSize);
         }
     }
 
@@ -1574,6 +1700,7 @@ public class PlayBoundsPrefs
         };
 
         public bool enabled = true;
+        public bool customAreaSize = false;
         public bool enabledInDashboard = false;
         public bool playAlertSound = true;
         public bool doNotActivateIfFacingDown = false;
@@ -1584,6 +1711,8 @@ public class PlayBoundsPrefs
         public float colorBlue = 0;
 
         public float boundsSize = 1f;
+        public float widthBoundsSize = 1f;
+        public float heightBoundsSize = 1f;
         public float timeFadeIn = 0.2f;
         public float timeFadeOut = 0.5f;
         public float timeTextFlash = 0.5f;

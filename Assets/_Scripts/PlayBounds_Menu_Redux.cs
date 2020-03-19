@@ -23,9 +23,12 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
     public Toggle playAlertSoundToggle;
     public Toggle doNotActivateIfFacingDownToggle;
     public Toggle hideMainWindowToggle;
+    public Toggle customAreaToggle;
     public UIDropdownBoundsBoxVisibility boundsBoxVisibilityDropdown;
     public UIDropdownGames gamesDropdown;
     public Slider boundsSizeSlider;
+    public Slider widthSizeSlider;
+    public Slider heightSizeSlider;
     public Slider fadeInTimeSlider;
     public Slider fadeOutTimeSlider;
     public Slider textFlashTimeSlider;
@@ -68,17 +71,27 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
     public void SetUIValues()
     {
         boundsSizeSlider.maxValue = UIPlayAreaRectangle.GetPlayAreaSize();
+        widthSizeSlider.maxValue = UIPlayAreaRectangle.GetPlayAreaSize();
+        heightSizeSlider.maxValue = UIPlayAreaRectangle.GetPlayAreaSize();
+        
 
         if (activeTab == ActiveTab.Global)
         {
+            boundsSizeSlider.gameObject.SetActive(!prefs.globalCustomAreaSize);
+            widthSizeSlider.gameObject.SetActive(prefs.globalCustomAreaSize);
+            heightSizeSlider.gameObject.SetActive(prefs.globalCustomAreaSize);
+            
             startWithVRToggle.isOn = prefs.StartWithSteamVR;
 
             isEnabledToggle.isOn = prefs.globalIsEnabled;
             enabledInDashboardToggle.isOn = prefs.globalEnabledInDashboard;
+            customAreaToggle.isOn = prefs.globalCustomAreaSize;
             playAlertSoundToggle.isOn = prefs.globalPlayAlertSound;
             doNotActivateIfFacingDownToggle.isOn = prefs.globalDoNotActivateIfFacingDown;
             boundsBoxVisibilityDropdown.selectedIndex = (int) (prefs.globalBoundsBoxVisibility);
             boundsSizeSlider.value = prefs.globalBoundsSize;
+            widthSizeSlider.value = prefs.globalWidthBoundsSize;
+            heightSizeSlider.value = prefs.gameHeightBoundsSize;
             fadeInTimeSlider.value = prefs.globalTimeFadeIn;
             fadeOutTimeSlider.value = prefs.globalTimeFadeOut;
             textFlashTimeSlider.value = prefs.globalTimeTextFlash;
@@ -94,14 +107,23 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
         }
         else
         {
+            boundsSizeSlider.gameObject.SetActive(!prefs.globalCustomAreaSize);
+            widthSizeSlider.gameObject.SetActive(prefs.globalCustomAreaSize);
+            heightSizeSlider.gameObject.SetActive(prefs.globalCustomAreaSize);
+            
             useGlobalSettingsToggle.isOn = prefs.gameUseGlobal;
 
             isEnabledToggle.isOn = prefs.gameIsEnabled;
             enabledInDashboardToggle.isOn = prefs.gameIsEnabledInDashboard;
             playAlertSoundToggle.isOn = prefs.gamePlayAlertSound;
+            
+            customAreaToggle.isOn = prefs.gameCustomAreaSize;
+            
             doNotActivateIfFacingDownToggle.isOn = prefs.gameDoNotActivateIfFacingDown;
             boundsBoxVisibilityDropdown.selectedIndex = (int) (prefs.gameBoundsBoxVisibility);
             boundsSizeSlider.value = prefs.gameBoundsSize;
+            widthSizeSlider.value = prefs.gameWidthBoundsSize;
+            heightSizeSlider.value = prefs.gameHeightBoundsSize;
             fadeInTimeSlider.value = prefs.gameTimeFadeIn;
             fadeOutTimeSlider.value = prefs.gameTimeFadeOut;
             textFlashTimeSlider.value = prefs.gameTimeTextFlash;
@@ -248,6 +270,23 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
             prefs.gameDoNotActivateIfFacingDown = doNotActivateIfFacingDownToggle.isOn;
         }
     }
+    
+    public void SetCustomAreaSize()
+    {
+        bool isOn = customAreaToggle.isOn;
+        boundsSizeSlider.gameObject.SetActive(!isOn);
+        widthSizeSlider.gameObject.SetActive(isOn);
+        heightSizeSlider.gameObject.SetActive(isOn);
+        if (activeTab == ActiveTab.Global)
+        {
+            prefs.globalCustomAreaSize = isOn;
+        }
+        else
+        {
+            prefs.gameCustomAreaSize = isOn;
+        }
+    }
+
 
     public void SetBoundsBoxVisibility()
     {
@@ -274,6 +313,30 @@ public class PlayBounds_Menu_Redux : MonoBehaviour
         else
         {
             prefs.gameBoundsSize = boundsSizeSlider.value;
+        }
+    }
+    
+    public void SetBoundsWidthSize()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
+            prefs.globalWidthBoundsSize = widthSizeSlider.value;
+        }
+        else
+        {
+            prefs.gameWidthBoundsSize = widthSizeSlider.value;
+        }
+    }
+    
+    public void SetBoundsHeightSize()
+    {
+        if (activeTab == ActiveTab.Global)
+        {
+            prefs.globalHeightBoundsSize = heightSizeSlider.value;
+        }
+        else
+        {
+            prefs.gameHeightBoundsSize = heightSizeSlider.value;
         }
     }
 
